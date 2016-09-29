@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Horoscope Central</title>
-</head>
-<body>
-<div class="container">
-	<p>Select your sun sign below:</p>
-	<form action="/search" method='POST'>
-		<input type="radio" name="sign" value="Capricorn"> Capricorn<br>
-		<input type="radio" name="sign" value="Aquarius"> Aquarius<br>
-		<input type="radio" name="sign" value="Pisces"> Pisces<br>
-		<input type="radio" name="sign" value="Aries"> Aries<br>
-		<input type="radio" name="sign" value="Taurus"> Taurus<br>
-		<input type="radio" name="sign" value="Gemini"> Gemini<br>
-		<input type="radio" name="sign" value="Cancer"> Cancer<br>
-		<input type="radio" name="sign" value="Leo"> Leo<br>
-		<input type="radio" name="sign" value="Virgo"> Virgo<br>
-		<input type="radio" name="sign" value="Libra"> Libra<br>
-		<input type="radio" name="sign" value="Scorpio"> Scorpio<br>
-		<input type="radio" name="sign" value="Sagittarius"> Sagittarius<br><br>
-		<input type="submit" value="Submit">
-	</form>
+{% extends 'base.html' %}
 
-	<p>Don't know your sun sign? <a href="/findSign">Click here</a>!</p>
+{% block title %} Horoscope Central {% endblock %}
+
+{% block content %}
+
+<body class = "sign_search_page">
+<div class = "home_content">
+	<div class="form_content">
+		<p>Select your sun sign below:</p>
+		<form action="/search" method='POST'>
+			<input type="radio" name="sign" value="Capricorn"> Capricorn<br>
+			<input type="radio" name="sign" value="Aquarius"> Aquarius<br>
+			<input type="radio" name="sign" value="Pisces"> Pisces<br>
+			<input type="radio" name="sign" value="Aries"> Aries<br>
+			<input type="radio" name="sign" value="Taurus"> Taurus<br>
+			<input type="radio" name="sign" value="Gemini"> Gemini<br>
+			<input type="radio" name="sign" value="Cancer"> Cancer<br>
+			<input type="radio" name="sign" value="Leo"> Leo<br>
+			<input type="radio" name="sign" value="Virgo"> Virgo<br>
+			<input type="radio" name="sign" value="Libra"> Libra<br>
+			<input type="radio" name="sign" value="Scorpio"> Scorpio<br>
+			<input type="radio" name="sign" value="Sagittarius"> Sagittarius<br><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<p>Don't know your sun sign? <a href="/findSign">Click here</a>!</p>
+	</div>
 </div>
 </body>
-</html>
+{% endblock %}

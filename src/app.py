@@ -95,12 +95,13 @@ def findSign():
 
 
 @app.route('/horoscopes/<sun_sign>')
-def daily_horoscope(sun_sign):
+def horoscopes(sun_sign):
 	sun_sign = sun_sign
 	daily = Horoscope.get_todays_horoscope(sun_sign)
 	weekly = Horoscope.get_weekly_horoscope(sun_sign)
 	yearly = Horoscope.get_yearly_horoscope(sun_sign)
-	return render_template('horoscopes.html', sun_sign = sun_sign, daily_horoscope = daily, weekly_horoscope = weekly, yearly_horoscope = yearly)
+	image_link = '/static/images/%s.jpg' %sun_sign
+	return render_template('horoscopes.html', sun_sign = sun_sign, daily_horoscope = daily, weekly_horoscope = weekly, yearly_horoscope = yearly, image = image_link)
 
 Server(app.wsgi_app).serve()
 

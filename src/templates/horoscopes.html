@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Horoscopes for {{ sun_sign }} </title>
-</head>
-<body>
-<div class="container">
-	<p>Daily Horoscope</p>
-	<p> {{ daily_horoscope['horoscope'] }}</p>
+{% extends 'base.html' %}
 
-	<p>Weekly Horoscope</p>
-	<p> {{ weekly_horoscope['horoscope'] }}</p>
+{% block title %} Horoscopes for {{ sun_sign }} {% endblock %}
 
-	<p>Yearly Horoscope</p>
-	<p> {{ yearly_horoscope['horoscope'] }}</p>
+{% block content %}
+
+<body class="horoscope_page_info">
+
+<div class="container" id="horoscope">
+	<div class="header_row">
+		<img class="sign_image" src="{{ image }}">
+		</div>
+	<div class="header_row">
+		<h1 class = "sign_title">{{ sun_sign }}</h1>
+		</div>
+
+	<h2 class = "sign_dates">Dates to come</h2>
+
+	<div class = "horoscope_section"> 
+		<h3 class = "titles">Daily Horoscope</h3>
+		<p> {{ daily_horoscope['horoscope'] }}</p>
+		</div>
+
+	<div class="horoscope_section">
+		<h3 class="titles">Weekly Horoscope</h3>
+		<p> {{ weekly_horoscope['horoscope'] }}</p>
+		</div>
+
+	<div class="horoscope_section">
+		<h3 class="titles">Yearly Horoscope</h3>
+		<p> {{ yearly_horoscope['horoscope'] }}</p>
+		</div>
 </div>
+
 </body>
-</html>
+
+{% endblock %}

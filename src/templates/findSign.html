@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Find Your Sign | Horoscope Central</title>
-</head>
-<body>
-<div class="container">
+{% extends 'base.html' %}
+
+{% block title %} Find Your Sign | Horoscope Central {% endblock %}
+
+
+{% block content %}
+
+<body class="sign_search_page">
+
+<div class = "home_content">
+	<div class="form_content">
+
 	<p>Select your birth month:</p>
 	<form action="/findSignBday" method='POST'>
 		<input type="radio" name="month" value="January"> January<br>
@@ -26,6 +31,9 @@
 		<input type="submit" value="Submit">
 	</form>
 
+	</div>
 </div>
+
 </body>
-</html>
+
+{% endblock %}

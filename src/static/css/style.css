@@ -1,0 +1,56 @@
+.sign_search_page {
+	background: url('../images/background.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.horoscope_page_info {
+	background-color: gold;
+}
+
+.home_content {
+	background-color: rgba(0, 0, 0, .5);
+	border-radius: 25px;
+	color: white;
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	width: 30%;
+	height: 45%;
+	margin-top: -15%; /*set to a negative number 1/2 of your height*/
+	margin-left: -15%; /*set to a negative number 1/2 of your width*/
+}
+
+
+.form_content {
+	overflow: auto;
+	padding-left: 10%;
+	padding-top: 5%;
+}
+
+#horoscope {
+	padding: 20px;
+}
+
+.sign_title {
+	font-family: Tahoma;
+	font-size: 44px;
+	margin-left: 10px;
+}
+
+.sign_image {
+	width: 150px;
+	height: 150px;
+	border-radius: 200px;
+}
+
+.header_row {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.horoscope_section {
+	width: 32%;
+	padding-right: 1%;
+	display: inline-block;
+	vertical-align: top;
+}
