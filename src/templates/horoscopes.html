@@ -6,32 +6,40 @@
 
 <body class="horoscope_page_info">
 
-<div class="container" id="horoscope">
-	<div class="header_row">
-		<img class="sign_image" src="{{ image }}">
-		</div>
-	<div class="header_row">
-		<h1 class = "sign_title">{{ sun_sign }}</h1>
-		</div>
+	<div class="container" id="horoscope">
+		<div class="header_img">
+			<img class="sign_image" src="{{ image }}">
+			</div>
+		<div class="header_row">
+			<h1 class = "sign_title">{{ sun_sign }}</h1>
+			</div>
 
-	<h2 class = "sign_dates">Dates to come</h2>
-
-	<div class = "horoscope_section"> 
-		<h3 class = "titles">Daily Horoscope</h3>
-		<p> {{ daily_horoscope['horoscope'] }}</p>
-		</div>
-
-	<div class="horoscope_section">
-		<h3 class="titles">Weekly Horoscope</h3>
-		<p> {{ weekly_horoscope['horoscope'] }}</p>
+		<div class="sign_info">
+			<h2 class = "sign_dates">Element: {{ sign_information["element-type"] }}</h2>
+			<br>
+			<h2 class="sign_dates">Compatible Signs: </h2>
+			{% for sign in sign_information['compatibility'] %}
+			<a href="/horoscopes/{{ sign }}">{{ sign }}</a>
+			{% endfor %}</h2>
 		</div>
 
-	<div class="horoscope_section">
-		<h3 class="titles">Yearly Horoscope</h3>
-		<p> {{ yearly_horoscope['horoscope'] }}</p>
-		</div>
-</div>
 
+
+		<div class = "horoscope_section"> 
+			<h3 class = "titles">Daily Horoscope</h3>
+			<p> {{ daily_horoscope['horoscope'] }}</p>
+			</div>
+
+		<div class="horoscope_section">
+			<h3 class="titles">Weekly Horoscope</h3>
+			<p> {{ weekly_horoscope['horoscope'] }}</p>
+			</div>
+
+		<div class="horoscope_section">
+			<h3 class="titles">Yearly Horoscope</h3>
+			<p> {{ yearly_horoscope['horoscope'] }}</p>
+			</div>
+	</div>
 </body>
 
 {% endblock %}

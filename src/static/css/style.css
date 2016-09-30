@@ -4,7 +4,7 @@
 }
 
 .horoscope_page_info {
-	background-color: gold;
+	background-color: white;
 }
 
 .home_content {
@@ -28,27 +28,36 @@
 }
 
 #horoscope {
-	padding: 20px;
+	padding: 60px;
+	background: black;
+	border-radius: 60px;
+	margin: 20px;
+	color: white;
 }
 
 .sign_title {
-	font-family: Tahoma;
-	font-size: 44px;
+	font-family: 'Alex Brush', cursive;
+	font-size: 64px;
 	margin-left: 10px;
+	text-align: center;
 }
 
 .sign_image {
-	width: 150px;
-	height: 150px;
-	border-radius: 200px;
+	width: 60%;
+	border-radius: 600px;
 }
 
-.header_row {
+.sign_dates {
 	display: inline-block;
-	vertical-align: middle;
 }
+
+.header_img {
+	text-align: center;
+}
+
 
 .horoscope_section {
+	margin-top: 40px;
 	width: 32%;
 	padding-right: 1%;
 	display: inline-block;

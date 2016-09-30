@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from livereload import Server
 from horoscope import Horoscope
+from modules.Zodiac import signs as sign_info
 
 import urllib2
 import json
@@ -96,12 +97,14 @@ def findSign():
 
 @app.route('/horoscopes/<sun_sign>')
 def horoscopes(sun_sign):
+	sign_information = sign_info[sun_sign]
 	sun_sign = sun_sign
 	daily = Horoscope.get_todays_horoscope(sun_sign)
 	weekly = Horoscope.get_weekly_horoscope(sun_sign)
 	yearly = Horoscope.get_yearly_horoscope(sun_sign)
 	image_link = '/static/images/%s.jpg' %sun_sign
-	return render_template('horoscopes.html', sun_sign = sun_sign, daily_horoscope = daily, weekly_horoscope = weekly, yearly_horoscope = yearly, image = image_link)
+	print sign_information
+	return render_template('horoscopes.html', sun_sign = sun_sign, daily_horoscope = daily, weekly_horoscope = weekly, yearly_horoscope = yearly, image = image_link, sign_information=sign_information)
 
 Server(app.wsgi_app).serve()
 
