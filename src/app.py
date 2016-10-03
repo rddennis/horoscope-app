@@ -29,71 +29,74 @@ def find_by_birthday():
 def findSign():
 	if request.method == "POST":
 		month = request.form['month']
+
 		day = int(request.form['day'])
-
-	if month == "January":
-		if day >= 21:
-			sign = "Aquarius"
+		if day <= 31:
+			if month == "January":
+				if day >= 21:
+					sign = "Aquarius"
+				else:
+					sign = "Capricorn"
+			elif month == "February":
+				if day >= 18:
+					sign = "Pisces"
+				else:
+					sign = "Aquarius"
+			elif month == "March":
+				if day >= 20:
+					sign = "Aries"
+				else:
+					sign = "Pisces"
+			elif month == "April":
+				if day >= 20:
+					sign = "Taurus"
+				else:
+					sign = "Aries"
+			elif month == "May":
+				if day >= 21:
+					sign = "Gemini"
+				else:
+					sign = "Taurus"
+			elif month == "June":
+				if day >= 21:
+					sign = "Cancer"
+				else:
+					sign = "Gemini"
+			elif month == "July":
+				if day >= 23:
+					sign = "Leo"
+				else:
+					sign = "Cancer"
+			elif month == "August":
+				if day >= 23:
+					sign = "Virgo"
+				else:
+					sign = "Leo"
+			elif month == "September":
+				if day >= 23:
+					sign = "Libra"
+				else:
+					sign = "Virgo"
+			elif month == "October":
+				if day >= 23:
+					sign = "Scorpio"
+				else: 
+					sign = "Libra"
+			elif month == "November":
+				if day >= 22:
+					sign = "Sagittarius"
+				else:
+					sign = "Scorpio"
+			elif month == "December":
+				if day >= 22:
+					sign = "Capricorn"
+				else:
+					sign = "Sagittarius"
+			return redirect('/horoscopes/%s' %sign)
+		
 		else:
-			sign = "Capricorn"
-	elif month == "February":
-		if day >= 18:
-			sign = "Pisces"
-		else:
-			sign = "Aquarius"
-	elif month == "March":
-		if day >= 20:
-			sign = "Aries"
-		else:
-			sign = "Pisces"
-	elif month == "April":
-		if day >= 20:
-			sign = "Taurus"
-		else:
-			sign = "Aries"
-	elif month == "May":
-		if day >= 21:
-			sign = "Gemini"
-		else:
-			sign = "Taurus"
-	elif month == "June":
-		if day >= 21:
-			sign = "Cancer"
-		else:
-			sign = "Gemini"
-	elif month == "July":
-		if day >= 23:
-			sign = "Leo"
-		else:
-			sign = "Cancer"
-	elif month == "August":
-		if day >= 23:
-			sign = "Virgo"
-		else:
-			sign = "Leo"
-	elif month == "September":
-		if day >= 23:
-			sign = "Libra"
-		else:
-			sign = "Virgo"
-	elif month == "October":
-		if day >= 23:
-			sign = "Scorpio"
-		else: 
-			sign = "Libra"
-	elif month == "November":
-		if day >= 22:
-			sign = "Sagittarius"
-		else:
-			sign = "Scorpio"
-	elif month == "December":
-		if day >= 22:
-			sign = "Capricorn"
-		else:
-			sign = "Sagittarius"
-
-	return redirect('/horoscopes/%s' %sign)
-
+			error_message = "Please select a valid date."
+			return render_template('findSign.html', error_message = error_message)
 
 @app.route('/horoscopes/<sun_sign>')
 def horoscopes(sun_sign):
